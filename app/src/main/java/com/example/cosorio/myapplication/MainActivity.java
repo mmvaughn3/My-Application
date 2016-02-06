@@ -14,6 +14,12 @@ import android.widget.RatingBar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SeekBar s1 = null;
+    private SeekBar s2 = null;
+    private TextView growText = null;
+    private RatingBar rate = null;
+    private int fiveStars = 5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +35,54 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        s1 = (SeekBar) findViewById(R.id.seekBar);
+        s2 = (SeekBar) findViewById(R.id.seekBar2);
+        growText = (TextView) findViewById(R.id.textView);
+        rate = (RatingBar) findViewById(R.id.ratingBar);
+        rate.setMax(fiveStars);
+
+        //event listeners for the widgets
+        s1.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener()
+                {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        growText.setTextSize((float) progress / 3);
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar){
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                }
+        );
+
+        s2.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener()
+                {
+                    @Override
+                    public void onProgressChanged (SeekBar seekBar, int progress, boolean fromUser) {
+                        rate.setRating((float) progress / 15);
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+                }
+        );
     }
 
     @Override
