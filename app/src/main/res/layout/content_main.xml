@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.cosorio.myapplication.MainActivity"
+    android:background="#69ffad"
     tools:showIn="@layout/activity_main">
 
     <SeekBar
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Small-Large"
+        android:textColor="#ffffff"
         android:id="@+id/textView"
         android:layout_marginBottom="83dp"
         android:layout_above="@+id/seekBar2"
@@ -52,6 +54,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="My First App"
         android:id="@+id/textView2"
+        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
